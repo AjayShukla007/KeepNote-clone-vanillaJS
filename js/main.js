@@ -618,7 +618,7 @@ const createNote = (text1 = '', text2 = '', index, time = '') => {
 };
 
 
-
+createNote();
 let db;
 const request = indexedDB.open("MyTestDatabase");
 request.onerror = (event) => {
