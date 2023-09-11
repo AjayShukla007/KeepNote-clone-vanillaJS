@@ -1,0 +1,472 @@
+.canvasContainer{
+   /* flex: 1; */
+   width: 48.5vw;
+   /* margin: 0 4vw 0 0; */
+   height: 50vh;
+   position: relative;
+   top: 0;
+   left: 0;
+   background: #232323;
+   border: 2px solid grey;
+   border-radius: 10px;
+   /* background: red; */
+   z-index: 200;
+   overflow: scroll;
+   border: 0 solid #FFFFFF !important;
+}
+.convaOptns{
+   border: 0 solid #FFFFFF !important;
+   width: 100%;
+   height: 10%;
+   
+   background: #232323;
+   /* background: red; */
+   /* display: flex; */
+   display: none;
+   flex-direction: row;
+   align-items: center;
+   margin: 0;
+}
+
+.convaOptns div:nth-child(1){
+   margin: 0 40% 0 2%;
+   
+}
+.convaOptns div:nth-child(2){
+   margin: 0 10% 0 0;
+}
+.convaOptns div:nth-child(3){
+   margin: 0 10% 0 0;
+   
+}
+.convaOptns div:nth-child(4){
+   /* margin: 0 40% 0 2%; */
+   
+}
+.convaOptns .undo{
+   background: #232323;
+   color: #fff;
+   outline: none;
+   border: 0;
+   transition: 0.15s ease all;
+}
+.convaOptns .undo:disabled{
+   color: #8E8E8E;
+}
+.convaOptns .redo{
+   background: #232323;
+   color: #fff;
+   outline: none;
+   border: 0;
+   transition: 0.15s ease all;
+   
+}
+.convaOptns .redo:disabled{
+   color: #8E8E8E;
+}
+
+.convaOptns .three-dot{
+   display: flex;
+   flex-direction: column;
+   /* background: red; */
+   width: 100%;
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+   /* border: 2px solid red; */
+   
+}
+
+.three-dot span{
+   width: 100%;
+   height: 20%;
+   font-size: 50%;
+   margin: 0;
+   /* border: 1px solid black; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+/*
+.three-dot span:nth-child(2){
+   width: 10%;
+   height: 10%;
+   background: red;
+   border-radius: 100%;
+   margin: 2%;
+}
+.three-dot span:nth-child(3){
+   width: 10%;
+   height: 10%;
+   background: red;
+   border-radius: 100%;
+   margin: 2%;
+}*/
+.three-dot span:active{
+   color: blue;
+   transition: 1s ease all;
+   animation: rubberBand 2s ease;
+}
+
+.canvaMoreOpts{
+   position: fixed;
+   top: 1%;
+   right: 1%;
+   width: 40%;
+   opacity: 0;
+   transform: scale(0);
+   height: 0%;
+   display: flex;
+   flex-direction: column;
+   z-index: 200;
+   background: #232323;
+   padding: 3%;
+   border-radius: 5%;
+}
+.canvaMoreOpts div{
+   /* border: solid white; */
+   margin: 10% 0;
+   /* width: 100%; */
+}
+.canvaBlank{
+   display: block;
+   opacity: 1;
+   z-index: 200;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: transparent;
+}
+.gridBox{
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(0);
+   opacity: 0;
+   width: 70vw;
+   height: 70vw;
+   background: #232323;
+   border-radius: 20px;
+   z-index: 201;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.chooseGrid{
+   background: #232323;
+   border-radius: 20px;
+   height: 80%;
+   width: 80%;
+   display: grid;
+   justify-content: center;
+   place-items: center;
+   grid-template-rows: 1fr 1fr;
+   grid-template-columns: 1fr 1fr;
+   gap: 0.5vw;
+   grid-auto-flow: row;
+}
+
+
+.chooseGrid div{
+   /* border: solid white; */
+   border-radius: 100%;
+   width: 65%;
+   height: 65%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   font-size: 50%;
+   /* border-radius: 100%; */
+}
+.gridContainer div{
+   margin-bottom: 5%;
+}
+.gridContainer div:hover{
+   /* border: 1vw solid #00A1FF; */
+}
+/* body {
+   background: white;
+   background-image: radial-gradient(black 1px, transparent 0);
+   background-size: 40px 40px;
+   background-position: -19px -19px;
+} */
+
+.chooseGrid .gridActive{
+   color: #4786B9;
+   background: white;
+   background-size: 20% 20%;
+   background-image:
+    linear-gradient(to right, black 1px, transparent 1px),
+    linear-gradient(to bottom, black 1px, transparent 1px);
+   background-position: -15% -9%;
+   border-radius: 100%;
+}
+
+
+
+.chooseGrid .gridClean{
+   background: white;
+   border-radius: 100%;
+   
+}
+.chooseGrid .gridLine{
+   
+   background: white;
+   background-image: linear-gradient(black 1px, transparent 0);
+   background-size: 20% 20%;
+   background-position: -19% -9%;
+   border-radius: 100%;
+   
+}
+.chooseGrid .gridDot{
+   background: white;
+   background-image: radial-gradient(black 1px, transparent 0);
+   background-size: 20% 20%;
+   /* background-position: -19% -9%; */
+   border-radius: 100%;
+   
+}
+.gridBox .gridLock{
+   color: #00A1FF;
+   background: transparent;
+   border-radius: 20px;
+   width: 70%;
+   display: flex;
+   justify-content: flex-end;
+   transform: translate(20%, 0)
+}
+.gridLock div{
+   margin: 10%;
+}
+
+.gridChoose{
+   
+   border: 1vw solid #00A1FF;
+   
+}
+
+
+
+#canvas{
+   width: 100%;
+   height: 80%;
+   background: #FFFFFF;
+   border: solid #FFFFFF;
+   border: 0 solid #1800FF ;
+   /* z-index: 200; */
+   margin: 0;
+   
+}
+.canvaStyle{
+   border: 2px solid green;
+   border-top: solid #232323;
+   position: fixed;
+   bottom: 0;
+   height: 30%;
+   width: 100%;
+   background: #232323;
+   /* display: flex; */
+   display: none;
+   
+   flex-direction: column;
+   border: 0 solid #FFFFFF !important;
+   transform: translate(0, 80%);
+}
+.canvaType{
+   width: 100%;
+   display: flex;
+   height: 20%;
+   border: 2px solid red;
+   align-items: center;
+   flex-direction: row;
+   justify-content: space-around;
+   margin: 0;
+   border: 0 solid #FFFFFF !important;
+   
+   /* padding: 0 0 5% 0; */
+}
+.canvaType div:hover{
+   /* color: red; */
+   transition: 0.5s ease all;
+   /* border-bottom: 2px solid #43A3FB;
+   
+   padding: 0 0 2% 0; */
+}
+
+.canvaType div:nth-child(1){
+   /* margin: 0 5% 0 5%; */
+   /* color: white; */
+}
+.canvaType div:nth-child(2){
+   /* margin: 0 10% 0 0; */
+}
+.canvaType div:nth-child(3){
+   background: -webkit-linear-gradient(bottom left,#eee 75%, #FF0000 25%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   
+   /* margin: 0 10% 0 0; */
+}
+.canvaType div:nth-child(4){
+   /* margin: 0 10% 0 0; */
+   background: -webkit-linear-gradient(bottom left, #eee 50%, #FF0000 50%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+.canvaType div:nth-child(5){
+   /* margin: 0 5% 0 0; */
+   background: -webkit-linear-gradient(bottom left, #eee 70%, #FF0000 30%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.activeLine{
+   /* border: 2px solid red; */
+   height: 5px;
+   width: 100%;
+   /* background: #0078FF; */
+   display: flex;
+   align-items: center;
+}
+.activeLine span{
+   position: absolute;
+   width: 10%;
+   height: 5px;
+   background: #232323;
+   border-top-right-radius: 100%;
+   border-top-left-radius: 100%;
+   transform: translate(-50%, -100%);
+}
+
+.canvaColor{/*
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   */
+   
+}
+
+.canvaColor {
+   padding: 2% auto;
+   height: 60%;
+   display: grid;
+   align-items: center;
+   place-items: center;
+   grid-template-rows: 0.5fr 0.5fr 0.5fr;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+   gap: 1vh 0px;
+   grid-auto-flow: row;
+   grid-template-areas:
+      ". . ."
+      ". . ."
+      ". . .";
+   overflow: scroll;
+      
+}
+
+.canvaColor div{
+   /* border: 1px solid lightcoral; */
+   width: 5vmin;
+   height: 5vmin;
+   border-radius: 100%;
+   margin: 2% 3.5%;
+}
+.canvaColor div:hover{
+   transform: scale(1.5);
+}
+.canvaSizing{
+   border: 1px solid red;
+   border: 0 solid #FFFFFF !important;
+   
+   width: 100%;
+   height: 20%;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+.canvaSizing input{
+   width: 70%;
+   height: 20%;
+}
+.canvaSizing div{
+   width: 30%;
+   height: 100%;
+   /* background: #FFFFFF; */
+   /* border-radius: 100%; */
+   border:  solid #909090A6;
+   border: 0 solid #FFFFFF !important;
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.canvaSizing div span{
+   width: 5vmin;
+   height: 5vmin;
+   background: #FFFFFF;
+   border-radius: 100%;
+   transform: scale(0.5);
+}
+
+
+.closeCanvaAlert{
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   background: #232323;
+   width: 60vw;
+   height: 25vw;
+   padding: 5vmin;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   border-radius: 20px;
+}
+.closeCanvaAlert h1{
+   text-align: left;
+   width: 100%;
+   z-index: 210;
+}
+.closeCanvaAlert p{
+   color: #fff;
+   font-size: 70%;
+   width: 100%;
+   /* border: solid white; */
+   padding: 1vmin;
+}
+.closeCanvaAlert div{
+   width: 100%;
+   margin: 2vmin 0 0 0;
+   display: flex;
+   justify-content: space-around;
+}
+.closeCanvaAlert div span{
+   font-size: 90%;
+   /* border: solid white; */
+}
+.closeCanvaAlert span:hover{
+   color: #920202;
+   scale: 1.2;
+}
+.closeCanvaAlert span:active{
+   color: #920202;
+   scale: 0.5;
+}
+.closeCanvaAlert .no{
+   flex: 2;
+   color: #fff;
+   text-align: right;
+}
+.closeCanvaAlert .yes{
+   color: #FFFFFF;
+   flex: 1;
+   text-align: right;
+}

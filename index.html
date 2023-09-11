@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"> -->
+   <!-- <script src="js/all.js">js/all.js</script> -->
+   <!-- <link rel="stylesheet" href="style/all.css"> -->
+   <link rel="stylesheet" href="./style/style.css">
+
+   <link rel="stylesheet" href="./style/shortcuts.css">
+
+   <link rel="stylesheet" href="./style/canvas.css">
+   <!-- <link rel="stylesheet" href="style/contents.css"> -->
+   <title>Keep Note</title>
+</head>
+
+<body>
+
+   <nav id="navBar">
+      <div id="sidebtn">
+
+         <span class="bar1"></span>
+         <span class="bar2"></span>
+         <span class="bar3"></span>
+      </div>
+      <input type="search" name="search" id="search" placeholder="Search your notes">
+      <div class="gridOrRow">
+         <div class="box"></div>
+         <div class="box"></div>
+         <div class="box"></div>
+         <div class="box"></div>
+      </div>
+      <div id="profilePic">
+
+      </div>
+   </nav>
+
+   <div id="pinned">
+
+   </div>
+
+
+
+   <div id="sideMenu">
+      <div id="appName">
+         <h3>Keep Note</h3>
+      </div>
+      <div class="sideContainer">
+         <div class="sideOption Active">Note</div>
+         <div class="sideOption">Remind</div>
+      </div>
+      <div class="sideContainer">
+         <div class="sideOption">Create new note</div>
+      </div>
+      <div class="sideContainer">
+         <div class="sideOption">Archive</div>
+         <div class="sideOption">Trash</div>
+      </div>
+      <div class="sideContainer">
+         <div class="sideOption">Settings</div>
+         <div class="sideOption">Help or feedback</div>
+      </div>
+   </div>
+
+
+
+   <div id="noteCon" class="box">
+
+   </div>
+
+
+
+
+   <div id="shortcuts">
+      <div class="shortCon">
+         <div class="shortBoxes"></div>
+         <div class="shortBoxes ripple" id="create">
+
+
+            <div id="plus" class="ripple">
+
+            </div>
+
+         </div>
+
+         <div class="shortBoxes"></div>
+      </div>
+      <div class="shortCon">
+         <div class="shortBoxes" id="items">
+
+            <div id="createTable" class="items ripple"><i class="fa fa-check-square"></i></div>
+            <div id="canvasBtn" class="items ripple"><i class="fa fa-paint-brush"></i></div>
+            <div class="items ripple">
+               <i class="fa fa-microphone"></i>
+            </div>
+            <div class="items ripple">
+               <i class="fa fa-image"></i>
+            </div>
+            <div class="items"></div>
+
+
+         </div>
+         <div class="shortBoxes" id="shortBox1">
+            <div id="short1"></div>
+            <div id="short2"></div>
+         </div>
+         <div class="shortBoxes" id="shortBox2"></div>
+      </div>
+   </div>
+
+   <div id='blur'></div>
+
+   <div class="deletOptions">
+      <div class="cancel">X</div>
+      <div class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+         </svg></div>
+      <div class="pin">&#128204;</div>
+      <div class="remindMe">&#128276;</div>
+
+   </div>
+   <img id="addedImg" src="#" alt="#">
+   <audio id="addedAudio" src="#"></audio>
+
+
+   <script src="./js/Combination.js">
+      js / combination.js
+   </script>
+   <script src="./js/fabric.min.js"></script>
+   <script src="./js/fabric_brush_types.js">
+      /KeepNote/js / fabric_brush_types.js
+   </script>
+
+   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> -->
+   <script src="./js/sideMenu.js">
+      js / sidemenu.js
+   </script>
+   <script src="./js/gridChange.js" type="text/javascript" charset="utf-8"></script>
+   <script src="./js/shortcut.js">
+      js / shortcut.js
+   </script>
+   <script src="./js/checkBox.js">
+      js / checkBox.js
+   </script>
+   <script src="./js/canvas.js">
+      js / canvas.js
+   </script>
+   <!-- <script src="js/contents.js">js/shortcut.js</script> -->
+   <!-- <script src="pages/canvas.js">pages/canvas.js</script> -->
+   <script src="./js/main.js">
+      js / main.js
+   </script>
+
+   <script>
+
+
+   </script>
+</body>
+
+</html>

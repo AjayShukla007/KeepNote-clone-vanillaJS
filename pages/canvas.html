@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title></title>
+   <link rel="stylesheet" href="./canvas.css">
+</head>
+
+<body>
+   <div id="preLoading">
+      <div id="Bcircle"></div>
+      <div id="Scircle"></div>
+   </div>
+
+   <div class="container">
+      
+         <div id="closeTools">
+      <div id="icon" class="Icon">
+      <span></span>
+      <span></span>
+      <span></span>
+      </div>
+      </div>
+      
+      <section class="tools-board ">
+         <div class="row">
+            <label for="">shapes</label>
+            <ul class="options" >
+               <li class="option tool" id="squere">
+                  <h3>&#9634;</h3>
+                  <span>squere</span>
+               </li>
+               <li class="option tool" id="circle">
+                  <h3>&#9711;</h3>
+                  <span>circle</span>
+               </li>
+               <li class="option tool" id="triangle">
+                  <h3>&#9651;</h3>
+                  <span>triangle</span>
+               </li>
+               <li class="option">
+                  <input type="checkbox" name="" id="fill-color">
+                  <label for="fill-color">fill color</label>
+               </li>
+               <li class="option">
+                  <input type="checkbox" name="" id="fix-shape">
+                  <label for="fix-shape">fix shape</label>
+               </li>
+            </ul>
+         </div>
+         <div class="row">
+            <label for="">options</label>
+            <ul class="options">
+               <li class="option active tool" id="brush">
+                  <h3>&#x1f58c;</h3>
+                  <span>brush</span>
+               </li>
+               <div id="brushDropD">More Brush +</div>
+               <div id="dropItems">
+                  
+               <li class="option tool" id="Brush1">
+                  <h3>&#9477;</h3>
+                  <span>brush1</span>
+               </li>
+               <li class="option tool" id="Brush2">
+                  <h3>&#9477;</h3>
+                  <span>brush2</span>
+               </li>
+               <li class="option tool" id="Brush3">
+                  <h3>&#9477;</h3>
+                  <span>brush3</span>
+               </li>
+               <li class="option tool" id="Brush4">
+                  <h3>&#9477;</h3>
+                  <span>brush4</span>
+               </li>
+               <li class="option tool" id="Brush5">
+                  <h3>&#9477;</h3>
+                  <span>brush5</span>
+               </li>
+               <li class="option tool" id="Brush6">
+                  <h3>&#9477;</h3>
+                  <span>brush6</span>
+               </li>
+               </li>
+               <li class="option tool" id="Brush7">
+                  <h3>&#9477;</h3>
+                  <span>brush7</span>
+               </li>
+               </li>
+               <li class="option tool" id="Brush8">
+                  <h3>&#9477;</h3>
+                  <span>brush8</span>
+               </li>
+               </li>
+               <li class="option tool" id="Brush9">
+                  <h3>&#9477;</h3>
+                  <span>brush9</span>
+               </li>
+               <li class="option tool" id="Brush10">
+                  <h3>&#9477;</h3>
+                  <span>brush10</span>
+               </li>
+               <li class="option tool" id="Brush11">
+                  <h3>&#9477;</h3>
+                  <span>brush11</span>
+               </li>
+               </div>
+               <li class="option tool" id="eraser">
+                  <h3>&#9703;</h3>
+                  <span>eraser</span>
+               </li>
+               <li class="option">
+                  <output id="range-number">5</output>
+                  <input type="range" name="" id="size-slider"  min='1' max='50' value='5' oninput="this.previousElementSibling.value = this.value" >
+
+                  <label for="size-slider">fill color</label>
+               </li>
+            </ul>
+         </div>
+         <div class="row colors">
+            <label for="">choose colors</label>
+            <ul class="options">
+               <li class="option"></li>
+               <li class="option selected"></li>
+               <li class="option"></li>
+               <li class="option"></li>
+               <li class="option">
+                  <input type="color" name="color-picker" id="color-picker" value="#00D1FF">
+               </li>
+            </ul>
+         </div>
+         <div class="row buttons">
+            <label for=""></label>
+            <ul class="options">
+               <button class="clear-canvas" id="clear-canvas">clear</button>
+               <button class="save-img">save</button>
+            </ul>
+            <div id="full-screen">
+              full screen canvas
+            </div>
+
+         </div>
+      </section>
+
+      <section class="drawing-board">
+         <canvas style="touch-action:none;" id="sketchpad">
+            
+         </canvas>
+      </section>
+
+   </div>
+ <div id="undo-redo">
+<button id="undo-btn">&#10226;</button>
+<button id="redo-btn">&#10227;</button>
+    
+ </div>  
+   
+
+<div id="block-bottom"></div>
+<div id="block-top"></div>
+
+ <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.0.0-beta.10/fabric.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.0.0-beta.10/fabric.gestures.min.js"></script> -->
+<script src="./canvas.js" defer>y</script>
+
+</body>
+
+</html>

@@ -1,0 +1,369 @@
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+#preLoading{
+   height: 100vh;
+   width: 100vw;
+   position: fixed;
+   top: 50%;
+   display: flex;
+   justify-content: center;
+}
+#Scircle{
+   border-left: 2px solid #009089;
+   border-radius: 50%;
+   height: 20vw;
+   width: 20vw;
+   position: fixed;
+   top: 52.5%;
+   left: 39.5%;
+   animation: Scircle 4s ease infinite;
+}
+@keyframes Scircle{
+   0%{
+      transform: rotate(0);
+   }
+   50%{
+      transform: rotate(360deg);
+   }
+   100%{
+      transform: rotate(0);
+   }
+}
+#Bcircle{
+   border-right: 2px solid #009089;
+   border-radius: 50%;
+   height: 30vw;
+   width: 30vw;
+   position: fixed;
+   top: 50%;
+   animation: Bcircle 4s ease infinite;
+}
+@keyframes Bcircle{
+   0%{
+      transform: rotate(0);
+   }
+   50%{
+      transform: rotate(-360deg);
+   }
+   100%{
+      transform: rotate(0);
+   }
+}
+.container{
+   display: flex;
+   width: 100%;
+   gap: 10px;
+   padding: 10px;
+   max-width: 1050px;
+}
+section{
+   background: #fff;
+   border-radius: 7px;
+}
+#closeTools{
+   z-index: 11;
+   background: #00D1FF;
+   float: right;
+   padding: 0 20px 0 0;
+   position: fixed;
+   top: 10%;
+   left: 10px;
+   transition: 1s ease;
+   opacity: 0.4;
+}
+.Icon {
+   width: 50px;
+   height: 50px;
+   position: relative;
+   transform: rotate(0deg);
+   transition: .5s ease-in-out;
+   cursor: pointer;
+}
+.Icon span {
+   display: block;
+   position: absolute;
+   left: 0;
+   top: 23px;
+   height: 8px;
+   width: 100%;
+   background: #fff;
+   border-radius: 4px;
+   transform: rotate(0deg);
+   transition: .2s ease-in-out;
+}
+
+.Icon span:nth-child(1),
+.Icon span:nth-child(3) {
+   width: 50%;
+   transform: rotate(45deg);
+}
+
+.Icon span:nth-child(1) {
+   left: 3px;
+   top: 15px;
+}
+
+.Icon span:nth-child(2) {
+   transform: rotate(-45deg);
+}
+
+.Icon span:nth-child(3) {
+   left: 20px;
+   top: 31px;
+}
+
+.Icon.open span:nth-child(1),
+.Icon.open span:nth-child(3) {
+   left: -1px;
+}
+
+.Icon.open span:nth-child(1) {
+   top: 15px;
+   transform: rotate(135deg);
+}
+
+.Icon.open span:nth-child(2) {
+   transform: rotate(0deg);
+}
+
+.Icon.open span:nth-child(3) {
+   top: 31px;
+   transform: rotate(45deg);
+}
+.tools-board{
+   position: fixed;
+   top: 17%;
+   left: 1%;
+   width: 60%;
+   overflow: scroll;
+   height: 500px;
+   padding: 15px 22px 0;
+   transition: 1s ease all;
+   border: 2px solid black;
+   transform: translate(1px,1px);
+   z-index: 11;
+}
+.translate{
+   transform: translate(-200px,1px);
+}
+tools-board .row{
+   margin-bottom: 20px;
+}
+.row .options{
+   list-style: none;
+   margin: 10px 0 0 5px;
+}
+.row .options .option{
+   display: flex;
+   align-items: center;
+   margin-bottom: 10px;
+   cursor: pointer;
+}
+.option :where(span,label){
+   background: #E3E3E387;
+   padding-left: 10px;
+   padding-right: 5px;
+   border-radius: 10px;
+   cursor: pointer;
+}
+.options #fill-color{
+   height: 14px;
+   width: 14px;
+   cursor: pointer;
+}
+#fill-color:checked ~ label{
+   color: #00E7C4;
+   filter: hue-rotate(180deg);
+}
+#fix-shape:checked ~ label{
+   color: #00E7C4;
+   filter: hue-rotate(180deg);
+}
+.options :is(:hover, :active) h3{
+    color: #00E7C4;
+    filter: hue-rotate(180deg);
+}
+.option #size-slider{
+   width: 100%;
+   height: 5px;
+   margin-top: 10px;
+   color: #00A1FF;
+   filter: hue-rotate(350deg);
+   opacity: 0.5;
+   
+}
+
+
+#brushDropD{
+   background: #fff;
+}
+#brushDropD:is(:hover, :active){
+   color: red;
+}
+#dropItems{
+   display: flex;
+   border: 2px solid black;
+   height: 1px;
+   transition: .5s ease;
+   opacity: 0;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   pointer-events: none;
+   overflow: scroll;
+}
+#dropItems:hover{
+   color: #00E7C4;
+   filter: hue-rotate(10deg);
+}
+
+
+.option #size-slider:hover{
+   opacity: 1;
+}
+#range-number{
+   padding: 8px 3px 2px 0;
+}
+.colors .options{
+   display: flex;
+   justify-content: space-between;
+   
+}
+.colors .option{
+   height: 20px;
+   width: 20px;
+   background: red;
+   border-radius: 50%;
+   margin-top: 3px;
+   position: relative;
+}
+.colors .option:nth-child(1){
+   background-color: #FF0000;
+}
+.colors .option:nth-child(2){
+   background-color: #0040FF;
+}
+.colors .option:nth-child(3){
+   background-color: #09FF00;
+}
+.colors .option:nth-child(4){
+   background-color: #F500FF;
+}
+.colors .option:nth-child(5){
+   background-color: #00D4FF;
+   text-align: center;
+   
+}
+
+.colors .option.selected::before{
+   position: absolute;
+   content: "";
+   height: 12px;
+   width: 12px;
+   top: 50%;
+   left: 50%;
+   background: inherit;
+   border-radius: inherit;
+   border: 2px solid #fff;
+   transform: translate(-50%,-50%);
+}
+.option #color-picker{
+   cursor: pointer;
+   opacity: 0;
+}
+.buttons button{
+   width: 100%;
+   color: #fff;
+   border: none;
+   outline: none;
+   padding: 11px 0;
+   margin-bottom: 13px;
+   cursor: pointer;
+}
+.buttons .clear-canvas{
+   color: #5A5A5A;
+   border: 1px solid #5A5A5A;
+   transition: all 0.4s ease;
+}
+.buttons .clear-canvas:hover{
+   color: #fff;
+   background: #00D1FF;
+}
+.buttons .save-img{
+   color: #fff;
+   background: #00D1FF;
+   border: 1px solid #5A5A5A;
+}
+
+#full-screen{
+   border: 2px solid black;
+   border-radius: 8px;
+   text-align: center;
+   margin: 5px 0 10px 0;
+   padding: 5px 3px;
+}
+
+
+
+
+
+.drawing-board{
+   flex: 1;
+   margin-top: -10px;
+   width: 100%;
+   height: 100%;
+   transition: 1s ease;
+   margin: 0;
+}
+.drawing-board canvas{
+   margin-top: -10px;
+   width: 100vw;
+   height: 100vh;
+}
+
+
+#block-bottom{
+   display: block;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   height: 30%;
+   background: #00D1FF;
+   z-index: 10;
+}
+#block-top{
+   display: block;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   height: 30%;
+   background: #00D1FF;
+   z-index: 10;
+}
+#undo-redo{
+   position: fixed;
+   top: 18%;
+   right: 5px;
+   z-index: 150;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+#undo-redo button{
+   font-size: 2rem;
+   border: none;
+   background: #FFFFFF91;
+}
+#undo-btn{
+      
+}
+#redo-btn{
+   
+}
+#undo-redo button:active{
+   background: #FFFFFFBF;
+}
